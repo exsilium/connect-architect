@@ -1,15 +1,16 @@
-var utils = require("connect/lib/utils");
 var netutil = require("netutil");
 var connect = require("connect");
+var cookieParser = require("cookie-parser");
+var bodyParser = require("body-parser");
 var http = require("http");
 var https = require("https");
 
 module.exports = function startup(options, imports, register) {
     var globalOptions = options.globals ? merge([options.globals]) : {};
-    
+
     var requestMethods = {};
     var responseMethods = {};
-    
+
     var app = connect();
 
     var hookNames = [
@@ -22,12 +23,9 @@ module.exports = function startup(options, imports, register) {
         getModule: function() {
             return connect;
         },
-        getUtils: function() {
-            return utils;
-        },
         /**
          * set per request options. Used e.g. for the view rendering
-         */ 
+         */
         setOptions: function(options) {
             return function(req, res, next) {
                 res.setOptions(options);
@@ -54,26 +52,26 @@ module.exports = function startup(options, imports, register) {
         }
 
     };
-    
+
     api.addResponseMethod("setOptions", function(options) {
         this._options = this._options || [];
         this._options.push(options);
     });
-    
+
     api.addResponseMethod("getOptions", function(options) {
         var opts = [globalOptions].concat(this._options || []);
         if (options)
             opts = opts.concat(options);
-        
+
         return merge(opts);
     });
-    
+
     api.addResponseMethod("resetOptions", function() {
         if (this._options)
             this._options.pop();
     });
 
-    
+
     hookNames.forEach(function(name) {
         var hookServer = connect();
         app.use(hookServer);
@@ -84,9 +82,9 @@ module.exports = function startup(options, imports, register) {
     app.use(connectHook);
     api.useError = connectHook.use;
 
-    api.useSetup(connect.cookieParser());
-    api.useSetup(connect.urlencoded());
-    api.useSetup(connect.json());
+    api.useSetup(cookieParser());
+    api.useSetup(bodyParser.urlencoded({extended: false}));
+    api.useSetup(bodyParser.json());
 
     api.addRoute = app.addRoute;
     api.use = api.useMain;
@@ -97,10 +95,10 @@ module.exports = function startup(options, imports, register) {
     api.useSetup(function(req, res, next) {
         for (var name in requestMethods)
             req[name] = requestMethods[name];
-            
+
         for (var name in responseMethods)
             res[name] = responseMethods[name];
-            
+
         next();
     });
 
@@ -123,7 +121,7 @@ module.exports = function startup(options, imports, register) {
             server = http.createServer(app);
         }
 
-        server.listen(port, host, function(err) {
+        var getListen = server.listen(port, host, function(err) {
             if (err)
                 return register(err);
 
@@ -140,15 +138,15 @@ module.exports = function startup(options, imports, register) {
                 "connect": api,
                 "http": {
                     getServer: function() {
-                        return server;
+                        return getListen;
                     }
                 }
             });
         });
-        
+
         if (options.websocket)
             attachWsServer(server, app);
-        
+
         function attachWsServer(server, app) {
             server.on("upgrade", function(req, socket, head) {
                 var res = new http.ServerResponse(req);
@@ -157,7 +155,7 @@ module.exports = function startup(options, imports, register) {
                     head: head
                 };
                 req.method = "UPGRADE";
-                
+
                 res.write = function() {
                     // console.log("RES WRITE", arguments);
                 };
@@ -168,12 +166,12 @@ module.exports = function startup(options, imports, register) {
                     // console.log("RES END", arguments);
                     socket.end();
                 };
-                
+
                 app.handle(req, res, function(err) {
                     if (err) {
                         console.error("Websocket error", err);
                     }
-                    
+
                     socket.end();
                 });
             });
@@ -190,33 +188,33 @@ module.exports = function startup(options, imports, register) {
     } else {
         startListening(options.port, options.host || "localhost");
     }
-    
+
     function connectError() {
         var filters = [];
-    
+
         function handle(err, req, res, out) {
             var rest = filters.concat();
-    
+
             function next(err) {
                 var filter = rest.shift();
                 if (!filter)
                     return out(err);
-    
+
                 filter(err, req, res, next);
             }
             next(err);
         }
-    
+
         handle.use = function(middleware) {
             filters.push(middleware);
         };
-        
+
         return handle;
     }
-    
+
     function getLocalIPs() {
         var os = require("os");
-    
+
         var interfaces = os.networkInterfaces ? os.networkInterfaces() : {};
         var addresses = [];
         for (var k in interfaces) {

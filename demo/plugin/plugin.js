@@ -1,11 +1,12 @@
 
 var path = require("path");
-var staticMiddleware = require("../../connect/middleware/static");
+var serveStatic = require("serve-static");
 
 module.exports = function startup(options, imports, register) {
     var connect = imports.connect;
-    
-    connect.useMain(staticMiddleware(path.join(__dirname, "www")));
-    
+    var statics = imports["connect.static"];
+
+    connect.useMain(serveStatic(path.join(__dirname, "www")));
+
     register(null, {});
 };

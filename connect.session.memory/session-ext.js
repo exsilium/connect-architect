@@ -1,4 +1,4 @@
-var MemoryStore = require("connect").session.MemoryStore;
+var MemoryStore = require("express-session/session/memory");
 
 module.exports = function startup(options, imports, register) {
 

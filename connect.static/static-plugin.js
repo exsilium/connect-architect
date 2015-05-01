@@ -1,3 +1,6 @@
+var serveStatic = require("serve-static");
+var http = require("http");
+
 module.exports = function startup(options, imports, register) {
 
     var prefix = options.prefix || "/static";
@@ -6,11 +9,11 @@ module.exports = function startup(options, imports, register) {
         "packages": [],
         "baseUrl": prefix
     };
-    
+
     var workerPrefix = options.workerPrefix || "/static";
 
     var connect = imports.connect.getModule();
-    var staticServer = connect.createServer();
+    var staticServer = connect();
     imports.connect.useMain(options.bindPrefix || prefix, staticServer);
 
     imports.connect.setGlobalOption("staticPrefix", prefix);
@@ -24,15 +27,18 @@ module.exports = function startup(options, imports, register) {
             addStatics: function(statics) {
                 mounts.push.apply(mounts, statics);
                 statics.forEach(function(s) {
+
+                    console.log("MOUNT", prefix, s.mount, s.path);
+
                     var mount = s.mount.replace(/^\/?/, "/");
                     if (s.router) {
-                        var server = connect.static(s.path);
+                        var server = serveStatic(s.path);
                         staticServer.use(mount, function(req, res, next) {
                             s.router(req, res);
                             server(req, res, next);
                         });
                     } else {
-                        staticServer.use(mount, connect.static(s.path));
+                        staticServer.use(mount, serveStatic(s.path));
                     }
 
                     var libs = s.rjs || {};
@@ -61,11 +67,11 @@ module.exports = function startup(options, imports, register) {
             getStaticPrefix: function() {
                 return prefix;
             },
-            
+
             getRequireJsConfig: function() {
                 return rjs;
             },
-            
+
             getWorkerPrefix: function() {
                 return workerPrefix;
             }

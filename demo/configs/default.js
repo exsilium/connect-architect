@@ -9,7 +9,8 @@ module.exports = [{
 }, {
     packagePath: "../../connect.session",
     key: "connect.architect." + port,
-    secret: "1234"
+    secret: "1234",
+    saveUninitialized: true
 }, {
     packagePath: "../../connect.session.memory"
 }, {

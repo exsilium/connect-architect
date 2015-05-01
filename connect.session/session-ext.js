@@ -1,10 +1,11 @@
-var Session = require("connect").session;
+var Session = require("express-session");
 var assert = require("assert");
 
 module.exports = function startup(options, imports, register) {
 
     assert(options.key, "option 'key' is required");
     assert(options.secret, "option 'secret' is required");
+    assert(options.saveUninitialized, "option 'saveUninitialized' is required");
 
     var connect = imports.connect;
     var sessionStore = imports["session-store"];
@@ -13,7 +14,9 @@ module.exports = function startup(options, imports, register) {
         store: sessionStore,
         key: options.key,
         secret: options.secret,
-        cookie: {}
+        cookie: {},
+        saveUninitialized: options.saveUninitialized,
+        resave: false
     };
     if ("proxy" in options)
         sessionOptions.proxy = options.proxy;
