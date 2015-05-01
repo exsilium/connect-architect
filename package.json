@@ -11,7 +11,7 @@
   ],
   "pm": "npm",
   "dependencies": {
-    "connect": "~2.29.1",
+    "connect": "~2.7.6",
     "connect-flash": "~0.1.1",
     "architect": "~0.1.11",
     "netutil": "~0.0.2",
@@ -27,12 +27,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/c9/connect-architect.git"
+    "url": "http://github.com/exsilium/connect-architect.git"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/c9/connect-architect/raw/master/LICENSE"
+      "url": "http://github.com/exsilium/connect-architect/raw/master/LICENSE"
     }
   ]
 }
