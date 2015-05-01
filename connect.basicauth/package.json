@@ -1,5 +1,5 @@
 {
-    "name": "c9.connect.basicauth",
+    "name": "connect.basicauth",
     "version": "0.0.1",
 
     "main": "./basicauth-plugin.js",

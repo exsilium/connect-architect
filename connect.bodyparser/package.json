@@ -1,5 +1,5 @@
 {
-    "name": "c9.connect.bodyparser",
+    "name": "connect.bodyparser",
     "version": "0.0.1",
 
     "main": "./bodyparser.js",

@@ -2,34 +2,21 @@ var utils = require("connect/lib/utils");
 var netutil = require("netutil");
 var connect = require("connect");
 var http = require("http");
+var https = require("https");
 
 module.exports = function startup(options, imports, register) {
     var globalOptions = options.globals ? merge([options.globals]) : {};
-
-    http.ServerResponse.prototype.setOptions = function(options) {
-        this._options = this._options || [];
-        this._options.push(options);
-    };
     
-    http.ServerResponse.prototype.getOptions = function(options) {
-        var opts = [globalOptions].concat(this._options || []);
-        if (options)
-            opts = opts.concat(options);
-        
-        return merge(opts);
-    };
+    var requestMethods = {};
+    var responseMethods = {};
     
-    http.ServerResponse.prototype.resetOptions = function() {
-        if (this._options)
-            this._options.pop();
-    };
-
     var app = connect();
 
     var hookNames = [
         "Start",
         "Setup",
-        "Main"
+        "Main",
+        "Session"
     ];
     var api = {
         getModule: function() {
@@ -55,9 +42,38 @@ module.exports = function startup(options, imports, register) {
         },
         setGlobalOption: function(key, value) {
             globalOptions[key] = value;
+        },
+        getGlobalOption: function(key) {
+            return globalOptions[key];
+        },
+        addResponseMethod: function(name, method) {
+            responseMethods[name] = method;
+        },
+        addRequestMethod: function(name, method) {
+            requestMethods[name] = method;
         }
 
     };
+    
+    api.addResponseMethod("setOptions", function(options) {
+        this._options = this._options || [];
+        this._options.push(options);
+    });
+    
+    api.addResponseMethod("getOptions", function(options) {
+        var opts = [globalOptions].concat(this._options || []);
+        if (options)
+            opts = opts.concat(options);
+        
+        return merge(opts);
+    });
+    
+    api.addResponseMethod("resetOptions", function() {
+        if (this._options)
+            this._options.pop();
+    });
+
+    
     hookNames.forEach(function(name) {
         var hookServer = connect();
         app.use(hookServer);
@@ -66,16 +82,27 @@ module.exports = function startup(options, imports, register) {
 
     var connectHook = connectError();
     app.use(connectHook);
-    api.useError = connectHook.use.bind(connectHook);
+    api.useError = connectHook.use;
 
     api.useSetup(connect.cookieParser());
-    api.useSetup(connect.bodyParser());
+    api.useSetup(connect.urlencoded());
+    api.useSetup(connect.json());
 
     api.addRoute = app.addRoute;
     api.use = api.useMain;
 
     api.on = app.on;
     api.emit = app.emit;
+
+    api.useSetup(function(req, res, next) {
+        for (var name in requestMethods)
+            req[name] = requestMethods[name];
+            
+        for (var name in responseMethods)
+            res[name] = responseMethods[name];
+            
+        next();
+    });
 
     function startListening (port, host) {
         api.getPort = function () {
@@ -85,12 +112,25 @@ module.exports = function startup(options, imports, register) {
             return host;
         };
 
-        var server = http.createServer(app);
+        var server;
+        var proto;
+        if (options.secure) {
+            proto = "https";
+            server = https.createServer(options.secure , app);
+        }
+        else {
+            proto = "http";
+            server = http.createServer(app);
+        }
+
         server.listen(port, host, function(err) {
             if (err)
                 return register(err);
 
-            console.log("Connect server listening at http://" + host + ":" + port);
+            console.log("Connect server listening at " + proto + "://"
+                + (host == "0.0.0.0" && options.showRealIP
+                ? getLocalIPs()[0]
+                : host) + ":" + port);
 
             register(null, {
                 "onDestruct": function(callback) {
@@ -119,16 +159,14 @@ module.exports = function startup(options, imports, register) {
                 req.method = "UPGRADE";
                 
                 res.write = function() {
-                    console.log("RES WRITE", arguments);
+                    // console.log("RES WRITE", arguments);
                 };
                 res.writeHead = function() {
-                    console.log("RES WRITEHEAD", arguments);
+                    // console.log("RES WRITEHEAD", arguments);
                 };
                 res.end = function() {
-                    console.log("RES END", arguments);
+                    // console.log("RES END", arguments);
                     socket.end();
-                    console.trace();
-                    console.log(req.headers)
                 };
                 
                 app.handle(req, res, function(err) {
@@ -175,6 +213,22 @@ module.exports = function startup(options, imports, register) {
         
         return handle;
     }
+    
+    function getLocalIPs() {
+        var os = require("os");
+    
+        var interfaces = os.networkInterfaces ? os.networkInterfaces() : {};
+        var addresses = [];
+        for (var k in interfaces) {
+            for (var k2 in interfaces[k]) {
+                var address = interfaces[k][k2];
+                if (address.family === "IPv4" && !address.internal) {
+                    addresses.push(address.address);
+                }
+            }
+        }
+        return addresses;
+    }
 };
 
 function merge(objects) {
@@ -182,7 +236,7 @@ function merge(objects) {
     for (var i=0; i<objects.length; i++) {
         var obj = objects[i];
         for (var key in obj) {
-            result[key] = obj[key]
+            result[key] = obj[key];
         }
     }
     return result;

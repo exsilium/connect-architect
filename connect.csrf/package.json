@@ -1,16 +1,17 @@
 {
-    "name": "connect.cors",
+    "name": "connect.csrf",
     "version": "0.0.1",
 
-    "main": "./cors.js",
+    "main": "./csrf.js",
     "private": true,
 
     "plugin": {
         "consumes": [
-            "connect"
+            "connect",
+            "session"
         ],
         "provides": [
-            "connect.cors"
+            "connect.csrf"
         ]
     }
 }

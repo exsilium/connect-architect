@@ -1,5 +1,5 @@
 {
-    "name": "c9.connect.query",
+    "name": "connect.query",
     "version": "0.0.1",
 
     "main": "./query.js",

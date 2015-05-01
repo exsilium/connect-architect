@@ -1,0 +1,856 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/exile/.nvm/v0.10.38/bin/node',
+1 verbose cli   '/Users/exile/.nvm/v0.10.38/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.38
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/exile/Projects/c9/connect-architect',
+5 verbose install   [ 'connect',
+5 verbose install     'connect-flash',
+5 verbose install     'architect',
+5 verbose install     'netutil',
+5 verbose install     'mime',
+5 verbose install     'email-validator',
+5 verbose install     'ejs',
+5 verbose install     'request' ] ]
+6 info preinstall connect-architect@0.2.1
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'connect@~2.12.0', null ]
+9 verbose cache add name=undefined spec="connect@~2.12.0" args=["connect@~2.12.0",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'connect@~2.12.0',
+10 verbose parsed url   path: 'connect@~2.12.0',
+10 verbose parsed url   href: 'connect@~2.12.0' }
+11 verbose cache add [ 'connect-flash@~0.1.1', null ]
+12 verbose cache add name=undefined spec="connect-flash@~0.1.1" args=["connect-flash@~0.1.1",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'connect-flash@~0.1.1',
+13 verbose parsed url   path: 'connect-flash@~0.1.1',
+13 verbose parsed url   href: 'connect-flash@~0.1.1' }
+14 verbose cache add [ 'architect@../architect', null ]
+15 verbose cache add name=undefined spec="architect@../architect" args=["architect@../architect",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'architect@../architect',
+16 verbose parsed url   path: 'architect@../architect',
+16 verbose parsed url   href: 'architect@../architect' }
+17 verbose cache add [ 'netutil@~0.0.2', null ]
+18 verbose cache add name=undefined spec="netutil@~0.0.2" args=["netutil@~0.0.2",null]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: 'netutil@~0.0.2',
+19 verbose parsed url   path: 'netutil@~0.0.2',
+19 verbose parsed url   href: 'netutil@~0.0.2' }
+20 verbose cache add name="connect" spec="~2.12.0" args=["connect","~2.12.0"]
+21 verbose parsed url { protocol: null,
+21 verbose parsed url   slashes: null,
+21 verbose parsed url   auth: null,
+21 verbose parsed url   host: null,
+21 verbose parsed url   port: null,
+21 verbose parsed url   hostname: null,
+21 verbose parsed url   hash: null,
+21 verbose parsed url   search: null,
+21 verbose parsed url   query: null,
+21 verbose parsed url   pathname: '~2.12.0',
+21 verbose parsed url   path: '~2.12.0',
+21 verbose parsed url   href: '~2.12.0' }
+22 verbose addNamed [ 'connect', '~2.12.0' ]
+23 verbose addNamed [ null, '>=2.12.0-0 <2.13.0-0' ]
+24 verbose cache add name="connect-flash" spec="~0.1.1" args=["connect-flash","~0.1.1"]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: '~0.1.1',
+25 verbose parsed url   path: '~0.1.1',
+25 verbose parsed url   href: '~0.1.1' }
+26 verbose addNamed [ 'connect-flash', '~0.1.1' ]
+27 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+28 verbose cache add name="architect" spec="../architect" args=["architect","../architect"]
+29 verbose parsed url { protocol: null,
+29 verbose parsed url   slashes: null,
+29 verbose parsed url   auth: null,
+29 verbose parsed url   host: null,
+29 verbose parsed url   port: null,
+29 verbose parsed url   hostname: null,
+29 verbose parsed url   hash: null,
+29 verbose parsed url   search: null,
+29 verbose parsed url   query: null,
+29 verbose parsed url   pathname: '../architect',
+29 verbose parsed url   path: '../architect',
+29 verbose parsed url   href: '../architect' }
+30 verbose addNamed [ 'architect', '../architect' ]
+31 verbose addNamed [ null, null ]
+32 verbose cache add name="netutil" spec="~0.0.2" args=["netutil","~0.0.2"]
+33 verbose parsed url { protocol: null,
+33 verbose parsed url   slashes: null,
+33 verbose parsed url   auth: null,
+33 verbose parsed url   host: null,
+33 verbose parsed url   port: null,
+33 verbose parsed url   hostname: null,
+33 verbose parsed url   hash: null,
+33 verbose parsed url   search: null,
+33 verbose parsed url   query: null,
+33 verbose parsed url   pathname: '~0.0.2',
+33 verbose parsed url   path: '~0.0.2',
+33 verbose parsed url   href: '~0.0.2' }
+34 verbose addNamed [ 'netutil', '~0.0.2' ]
+35 verbose addNamed [ null, '>=0.0.2-0 <0.1.0-0' ]
+36 verbose cache add [ 'mime@~1.3.4', null ]
+37 verbose cache add name=undefined spec="mime@~1.3.4" args=["mime@~1.3.4",null]
+38 verbose parsed url { protocol: null,
+38 verbose parsed url   slashes: null,
+38 verbose parsed url   auth: null,
+38 verbose parsed url   host: null,
+38 verbose parsed url   port: null,
+38 verbose parsed url   hostname: null,
+38 verbose parsed url   hash: null,
+38 verbose parsed url   search: null,
+38 verbose parsed url   query: null,
+38 verbose parsed url   pathname: 'mime@~1.3.4',
+38 verbose parsed url   path: 'mime@~1.3.4',
+38 verbose parsed url   href: 'mime@~1.3.4' }
+39 verbose cache add [ 'email-validator@~1.0.1', null ]
+40 verbose cache add name=undefined spec="email-validator@~1.0.1" args=["email-validator@~1.0.1",null]
+41 verbose parsed url { protocol: null,
+41 verbose parsed url   slashes: null,
+41 verbose parsed url   auth: null,
+41 verbose parsed url   host: null,
+41 verbose parsed url   port: null,
+41 verbose parsed url   hostname: null,
+41 verbose parsed url   hash: null,
+41 verbose parsed url   search: null,
+41 verbose parsed url   query: null,
+41 verbose parsed url   pathname: 'email-validator@~1.0.1',
+41 verbose parsed url   path: 'email-validator@~1.0.1',
+41 verbose parsed url   href: 'email-validator@~1.0.1' }
+42 silly lockFile f7cd602c-connect-2-12-0 connect@~2.12.0
+43 verbose lock connect@~2.12.0 /Users/exile/.npm/f7cd602c-connect-2-12-0.lock
+44 silly lockFile be0530b2-connect-flash-0-1-1 connect-flash@~0.1.1
+45 verbose lock connect-flash@~0.1.1 /Users/exile/.npm/be0530b2-connect-flash-0-1-1.lock
+46 silly lockFile 942ab160-architect-architect architect@../architect
+47 verbose lock architect@../architect /Users/exile/.npm/942ab160-architect-architect.lock
+48 silly lockFile 05769cc6-netutil-0-0-2 netutil@~0.0.2
+49 verbose lock netutil@~0.0.2 /Users/exile/.npm/05769cc6-netutil-0-0-2.lock
+50 verbose cache add name="mime" spec="~1.3.4" args=["mime","~1.3.4"]
+51 verbose parsed url { protocol: null,
+51 verbose parsed url   slashes: null,
+51 verbose parsed url   auth: null,
+51 verbose parsed url   host: null,
+51 verbose parsed url   port: null,
+51 verbose parsed url   hostname: null,
+51 verbose parsed url   hash: null,
+51 verbose parsed url   search: null,
+51 verbose parsed url   query: null,
+51 verbose parsed url   pathname: '~1.3.4',
+51 verbose parsed url   path: '~1.3.4',
+51 verbose parsed url   href: '~1.3.4' }
+52 verbose addNamed [ 'mime', '~1.3.4' ]
+53 verbose addNamed [ null, '>=1.3.4-0 <1.4.0-0' ]
+54 silly lockFile 8e5a3b74-mime-1-3-4 mime@~1.3.4
+55 verbose lock mime@~1.3.4 /Users/exile/.npm/8e5a3b74-mime-1-3-4.lock
+56 verbose cache add name="email-validator" spec="~1.0.1" args=["email-validator","~1.0.1"]
+57 verbose parsed url { protocol: null,
+57 verbose parsed url   slashes: null,
+57 verbose parsed url   auth: null,
+57 verbose parsed url   host: null,
+57 verbose parsed url   port: null,
+57 verbose parsed url   hostname: null,
+57 verbose parsed url   hash: null,
+57 verbose parsed url   search: null,
+57 verbose parsed url   query: null,
+57 verbose parsed url   pathname: '~1.0.1',
+57 verbose parsed url   path: '~1.0.1',
+57 verbose parsed url   href: '~1.0.1' }
+58 verbose addNamed [ 'email-validator', '~1.0.1' ]
+59 verbose addNamed [ null, '>=1.0.1-0 <1.1.0-0' ]
+60 silly lockFile c866d7c7-email-validator-1-0-1 email-validator@~1.0.1
+61 verbose lock email-validator@~1.0.1 /Users/exile/.npm/c866d7c7-email-validator-1-0-1.lock
+62 verbose cache add [ 'ejs@~2.3.1', null ]
+63 verbose cache add name=undefined spec="ejs@~2.3.1" args=["ejs@~2.3.1",null]
+64 verbose parsed url { protocol: null,
+64 verbose parsed url   slashes: null,
+64 verbose parsed url   auth: null,
+64 verbose parsed url   host: null,
+64 verbose parsed url   port: null,
+64 verbose parsed url   hostname: null,
+64 verbose parsed url   hash: null,
+64 verbose parsed url   search: null,
+64 verbose parsed url   query: null,
+64 verbose parsed url   pathname: 'ejs@~2.3.1',
+64 verbose parsed url   path: 'ejs@~2.3.1',
+64 verbose parsed url   href: 'ejs@~2.3.1' }
+65 verbose cache add [ 'request@2.55.0', null ]
+66 verbose cache add name=undefined spec="request@2.55.0" args=["request@2.55.0",null]
+67 verbose parsed url { protocol: null,
+67 verbose parsed url   slashes: null,
+67 verbose parsed url   auth: null,
+67 verbose parsed url   host: null,
+67 verbose parsed url   port: null,
+67 verbose parsed url   hostname: null,
+67 verbose parsed url   hash: null,
+67 verbose parsed url   search: null,
+67 verbose parsed url   query: null,
+67 verbose parsed url   pathname: 'request@2.55.0',
+67 verbose parsed url   path: 'request@2.55.0',
+67 verbose parsed url   href: 'request@2.55.0' }
+68 verbose cache add name="ejs" spec="~2.3.1" args=["ejs","~2.3.1"]
+69 verbose parsed url { protocol: null,
+69 verbose parsed url   slashes: null,
+69 verbose parsed url   auth: null,
+69 verbose parsed url   host: null,
+69 verbose parsed url   port: null,
+69 verbose parsed url   hostname: null,
+69 verbose parsed url   hash: null,
+69 verbose parsed url   search: null,
+69 verbose parsed url   query: null,
+69 verbose parsed url   pathname: '~2.3.1',
+69 verbose parsed url   path: '~2.3.1',
+69 verbose parsed url   href: '~2.3.1' }
+70 verbose addNamed [ 'ejs', '~2.3.1' ]
+71 verbose addNamed [ null, '>=2.3.1-0 <2.4.0-0' ]
+72 silly lockFile 35acc1b3-ejs-2-3-1 ejs@~2.3.1
+73 verbose lock ejs@~2.3.1 /Users/exile/.npm/35acc1b3-ejs-2-3-1.lock
+74 verbose cache add name="request" spec="2.55.0" args=["request","2.55.0"]
+75 verbose parsed url { protocol: null,
+75 verbose parsed url   slashes: null,
+75 verbose parsed url   auth: null,
+75 verbose parsed url   host: null,
+75 verbose parsed url   port: null,
+75 verbose parsed url   hostname: null,
+75 verbose parsed url   hash: null,
+75 verbose parsed url   search: null,
+75 verbose parsed url   query: null,
+75 verbose parsed url   pathname: '2.55.0',
+75 verbose parsed url   path: '2.55.0',
+75 verbose parsed url   href: '2.55.0' }
+76 verbose addNamed [ 'request', '2.55.0' ]
+77 verbose addNamed [ '2.55.0', '2.55.0' ]
+78 silly lockFile d17afc53-request-2-55-0 request@2.55.0
+79 verbose lock request@2.55.0 /Users/exile/.npm/d17afc53-request-2-55-0.lock
+80 silly addNameRange { name: 'connect',
+80 silly addNameRange   range: '>=2.12.0-0 <2.13.0-0',
+80 silly addNameRange   hasData: false }
+81 silly addNameRange { name: 'connect-flash',
+81 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+81 silly addNameRange   hasData: false }
+82 info addNameTag [ 'architect', '../architect' ]
+83 silly addNameRange { name: 'netutil', range: '>=0.0.2-0 <0.1.0-0', hasData: false }
+84 silly addNameRange { name: 'mime', range: '>=1.3.4-0 <1.4.0-0', hasData: false }
+85 silly addNameRange { name: 'email-validator',
+85 silly addNameRange   range: '>=1.0.1-0 <1.1.0-0',
+85 silly addNameRange   hasData: false }
+86 silly addNameRange { name: 'ejs', range: '>=2.3.1-0 <2.4.0-0', hasData: false }
+87 verbose request where is /connect-flash
+88 verbose request registry https://registry.npmjs.org/
+89 verbose request id 83054be3031dd819
+90 verbose url raw /connect-flash
+91 verbose url resolving [ 'https://registry.npmjs.org/', './connect-flash' ]
+92 verbose url resolved https://registry.npmjs.org/connect-flash
+93 verbose request where is https://registry.npmjs.org/connect-flash
+94 info trying registry request attempt 1 at 18:26:16
+95 verbose etag "D1OQ4SBP1PDJLNH67OWPJGSEB"
+96 http GET https://registry.npmjs.org/connect-flash
+97 verbose request where is /architect
+98 verbose request registry https://registry.npmjs.org/
+99 verbose url raw /architect
+100 verbose url resolving [ 'https://registry.npmjs.org/', './architect' ]
+101 verbose url resolved https://registry.npmjs.org/architect
+102 verbose request where is https://registry.npmjs.org/architect
+103 info trying registry request attempt 1 at 18:26:16
+104 verbose etag "54O7WS7VVFMN1BY1TSMN5SM6W"
+105 http GET https://registry.npmjs.org/architect
+106 verbose request where is /netutil
+107 verbose request registry https://registry.npmjs.org/
+108 verbose url raw /netutil
+109 verbose url resolving [ 'https://registry.npmjs.org/', './netutil' ]
+110 verbose url resolved https://registry.npmjs.org/netutil
+111 verbose request where is https://registry.npmjs.org/netutil
+112 info trying registry request attempt 1 at 18:26:16
+113 verbose etag "2YBC8F4D173HDAH8MBJ2VZQ7F"
+114 http GET https://registry.npmjs.org/netutil
+115 verbose request where is /connect
+116 verbose request registry https://registry.npmjs.org/
+117 verbose url raw /connect
+118 verbose url resolving [ 'https://registry.npmjs.org/', './connect' ]
+119 verbose url resolved https://registry.npmjs.org/connect
+120 verbose request where is https://registry.npmjs.org/connect
+121 info trying registry request attempt 1 at 18:26:16
+122 verbose etag "AMFZBJLQCX0U4SCMBB20284X4"
+123 http GET https://registry.npmjs.org/connect
+124 verbose request where is /mime
+125 verbose request registry https://registry.npmjs.org/
+126 verbose url raw /mime
+127 verbose url resolving [ 'https://registry.npmjs.org/', './mime' ]
+128 verbose url resolved https://registry.npmjs.org/mime
+129 verbose request where is https://registry.npmjs.org/mime
+130 info trying registry request attempt 1 at 18:26:16
+131 verbose etag "3ZRQIU5H2D52GRYT3000WPDFS"
+132 http GET https://registry.npmjs.org/mime
+133 verbose request where is /email-validator
+134 verbose request registry https://registry.npmjs.org/
+135 verbose url raw /email-validator
+136 verbose url resolving [ 'https://registry.npmjs.org/', './email-validator' ]
+137 verbose url resolved https://registry.npmjs.org/email-validator
+138 verbose request where is https://registry.npmjs.org/email-validator
+139 info trying registry request attempt 1 at 18:26:16
+140 verbose etag "7D4FYZYNZH0E0KUEODDZ6I52U"
+141 http GET https://registry.npmjs.org/email-validator
+142 verbose request where is /ejs
+143 verbose request registry https://registry.npmjs.org/
+144 verbose url raw /ejs
+145 verbose url resolving [ 'https://registry.npmjs.org/', './ejs' ]
+146 verbose url resolved https://registry.npmjs.org/ejs
+147 verbose request where is https://registry.npmjs.org/ejs
+148 info trying registry request attempt 1 at 18:26:16
+149 verbose etag "3V6RAL95CA3D1ZLWSX5FMHCOR"
+150 http GET https://registry.npmjs.org/ejs
+151 verbose request where is /request
+152 verbose request registry https://registry.npmjs.org/
+153 verbose url raw /request
+154 verbose url resolving [ 'https://registry.npmjs.org/', './request' ]
+155 verbose url resolved https://registry.npmjs.org/request
+156 verbose request where is https://registry.npmjs.org/request
+157 info trying registry request attempt 1 at 18:26:16
+158 verbose etag "22SLBL467UG47XQ849ZEDLUBB"
+159 http GET https://registry.npmjs.org/request
+160 http 304 https://registry.npmjs.org/connect
+161 silly registry.get cb [ 304,
+161 silly registry.get   { date: 'Fri, 01 May 2015 15:26:16 GMT',
+161 silly registry.get     via: '1.1 varnish',
+161 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:16 GMT',
+161 silly registry.get     'cache-control': 'max-age=60',
+161 silly registry.get     etag: '"AMFZBJLQCX0U4SCMBB20284X4"',
+161 silly registry.get     age: '8',
+161 silly registry.get     connection: 'keep-alive',
+161 silly registry.get     'x-served-by': 'cache-ams4146-AMS',
+161 silly registry.get     'x-cache': 'HIT',
+161 silly registry.get     'x-cache-hits': '1',
+161 silly registry.get     'x-timer': 'S1430493976.965843,VS0,VE1',
+161 silly registry.get     vary: 'Accept' } ]
+162 verbose etag https://registry.npmjs.org/connect from cache
+163 silly addNameRange number 2 { name: 'connect', range: '>=2.12.0-0 <2.13.0-0', hasData: true }
+164 silly addNameRange versions [ 'connect',
+164 silly addNameRange   [ '0.0.1',
+164 silly addNameRange     '0.0.2',
+164 silly addNameRange     '0.0.3',
+164 silly addNameRange     '0.0.4',
+164 silly addNameRange     '0.0.5',
+164 silly addNameRange     '0.0.6',
+164 silly addNameRange     '0.1.0',
+164 silly addNameRange     '0.2.0',
+164 silly addNameRange     '0.2.1',
+164 silly addNameRange     '0.2.2',
+164 silly addNameRange     '0.2.3',
+164 silly addNameRange     '0.2.4',
+164 silly addNameRange     '0.2.5',
+164 silly addNameRange     '0.2.6',
+164 silly addNameRange     '0.2.7',
+164 silly addNameRange     '0.3.0',
+164 silly addNameRange     '0.4.0',
+164 silly addNameRange     '0.5.0',
+164 silly addNameRange     '0.5.1',
+164 silly addNameRange     '0.5.2',
+164 silly addNameRange     '0.5.3',
+164 silly addNameRange     '0.5.4',
+164 silly addNameRange     '0.5.5',
+164 silly addNameRange     '0.5.6',
+164 silly addNameRange     '0.5.7',
+164 silly addNameRange     '0.5.8',
+164 silly addNameRange     '0.5.9',
+164 silly addNameRange     '0.5.10',
+164 silly addNameRange     '1.0.0',
+164 silly addNameRange     '1.0.1',
+164 silly addNameRange     '1.0.2',
+164 silly addNameRange     '1.0.3',
+164 silly addNameRange     '1.0.4',
+164 silly addNameRange     '1.0.5',
+164 silly addNameRange     '1.0.6',
+164 silly addNameRange     '1.1.0',
+164 silly addNameRange     '1.1.1',
+164 silly addNameRange     '1.1.2',
+164 silly addNameRange     '1.1.3',
+164 silly addNameRange     '1.1.4',
+164 silly addNameRange     '1.1.5',
+164 silly addNameRange     '1.2.0',
+164 silly addNameRange     '1.2.1',
+164 silly addNameRange     '1.2.2',
+164 silly addNameRange     '1.2.3',
+164 silly addNameRange     '1.3.0',
+164 silly addNameRange     '1.4.0',
+164 silly addNameRange     '1.4.1',
+164 silly addNameRange     '1.4.2',
+164 silly addNameRange     '1.4.3',
+164 silly addNameRange     '1.4.4',
+164 silly addNameRange     '1.4.5',
+164 silly addNameRange     '1.4.6',
+164 silly addNameRange     '1.5.0',
+164 silly addNameRange     '1.5.1',
+164 silly addNameRange     '1.5.2',
+164 silly addNameRange     '1.6.0',
+164 silly addNameRange     '1.6.1',
+164 silly addNameRange     '1.6.2',
+164 silly addNameRange     '1.6.3',
+164 silly addNameRange     '1.6.4',
+164 silly addNameRange     '1.7.0',
+164 silly addNameRange     '1.7.1',
+164 silly addNameRange     '1.7.2',
+164 silly addNameRange     '1.7.3',
+164 silly addNameRange     '1.8.0',
+164 silly addNameRange     '1.8.1',
+164 silly addNameRange     '1.8.2',
+164 silly addNameRange     '1.8.3',
+164 silly addNameRange     '1.8.4',
+164 silly addNameRange     '1.8.5',
+164 silly addNameRange     '2.0.0',
+164 silly addNameRange     '2.0.1',
+164 silly addNameRange     '2.0.2',
+164 silly addNameRange     '2.0.3',
+164 silly addNameRange     '1.8.6',
+164 silly addNameRange     '2.1.0',
+164 silly addNameRange     '2.1.1',
+164 silly addNameRange     '2.1.2',
+164 silly addNameRange     '1.8.7',
+164 silly addNameRange     '2.1.3',
+164 silly addNameRange     '2.2.0',
+164 silly addNameRange     '2.2.1',
+164 silly addNameRange     '2.2.2',
+164 silly addNameRange     '2.3.0',
+164 silly addNameRange     '2.3.1',
+164 silly addNameRange     '2.3.2',
+164 silly addNameRange     '2.3.3',
+164 silly addNameRange     '1.9.0',
+164 silly addNameRange     '1.9.1',
+164 silly addNameRange     '2.3.4',
+164 silly addNameRange     '2.3.5',
+164 silly addNameRange     '2.3.6',
+164 silly addNameRange     '2.3.7',
+164 silly addNameRange     '1.9.2',
+164 silly addNameRange     '2.3.8',
+164 silly addNameRange     '2.3.9',
+164 silly addNameRange     '2.4.0',
+164 silly addNameRange     '2.4.1',
+164 silly addNameRange     '2.4.2',
+164 silly addNameRange     '2.4.3',
+164 silly addNameRange     '2.4.4',
+164 silly addNameRange     '2.4.5',
+164 silly addNameRange     '2.4.6',
+164 silly addNameRange     '2.5.0',
+164 silly addNameRange     '2.6.0',
+164 silly addNameRange     '2.6.1',
+164 silly addNameRange     '2.6.2',
+164 silly addNameRange     '2.7.0',
+164 silly addNameRange     '2.7.1',
+164 silly addNameRange     '2.7.2',
+164 silly addNameRange     '2.7.3',
+164 silly addNameRange     '2.7.4',
+164 silly addNameRange     '2.7.5',
+164 silly addNameRange     '2.7.6',
+164 silly addNameRange     '2.7.7',
+164 silly addNameRange     '2.7.8',
+164 silly addNameRange     '2.7.9',
+164 silly addNameRange     '2.7.10',
+164 silly addNameRange     '2.7.11',
+164 silly addNameRange     '2.8.0',
+164 silly addNameRange     '2.8.1',
+164 silly addNameRange     '2.8.2',
+164 silly addNameRange     '2.8.3',
+164 silly addNameRange     '2.8.4',
+164 silly addNameRange     '2.8.5',
+164 silly addNameRange     '2.8.6',
+164 silly addNameRange     '2.8.7',
+164 silly addNameRange     '2.8.8',
+164 silly addNameRange     '2.9.0',
+164 silly addNameRange     '2.9.1',
+164 silly addNameRange     '2.9.2',
+164 silly addNameRange     '2.10.0',
+164 silly addNameRange     '2.10.1',
+164 silly addNameRange     '2.11.0',
+164 silly addNameRange     '2.11.1',
+164 silly addNameRange     '2.11.2',
+164 silly addNameRange     '2.12.0',
+164 silly addNameRange     '2.13.0',
+164 silly addNameRange     '2.13.1',
+164 silly addNameRange     '2.14.0',
+164 silly addNameRange     '2.14.1',
+164 silly addNameRange     '3.0.0-rc.1',
+164 silly addNameRange     '2.14.2',
+164 silly addNameRange     '2.14.3',
+164 silly addNameRange     '2.14.4',
+164 silly addNameRange     '2.14.5',
+164 silly addNameRange     '2.15.0',
+164 silly addNameRange     '3.0.0-rc.2',
+164 silly addNameRange     '2.16.0',
+164 silly addNameRange     '2.16.1',
+164 silly addNameRange     '2.16.2',
+164 silly addNameRange     '2.17.0',
+164 silly addNameRange     '2.17.1',
+164 silly addNameRange     '2.17.2',
+164 silly addNameRange     '2.17.3',
+164 silly addNameRange     '2.18.0',
+164 silly addNameRange     '3.0.0',
+164 silly addNameRange     '2.19.0',
+164 silly addNameRange     '2.19.1',
+164 silly addNameRange     '2.19.2',
+164 silly addNameRange     '2.19.3',
+164 silly addNameRange     '2.19.4',
+164 silly addNameRange     '2.19.5',
+164 silly addNameRange     '2.19.6',
+164 silly addNameRange     '2.20.0',
+164 silly addNameRange     '2.20.1',
+164 silly addNameRange     '2.20.2',
+164 silly addNameRange     '3.0.1',
+164 silly addNameRange     '2.21.0',
+164 silly addNameRange     '2.21.1',
+164 silly addNameRange     '2.22.0',
+164 silly addNameRange     '2.23.0',
+164 silly addNameRange     '3.0.2',
+164 silly addNameRange     '2.24.0',
+164 silly addNameRange     '3.1.0',
+164 silly addNameRange     '2.24.1',
+164 silly addNameRange     '2.24.2',
+164 silly addNameRange     '2.24.3',
+164 silly addNameRange     '2.25.0',
+164 silly addNameRange     '2.25.1',
+164 silly addNameRange     '2.25.2',
+164 silly addNameRange     '2.25.3',
+164 silly addNameRange     '2.25.4',
+164 silly addNameRange     '3.1.1',
+164 silly addNameRange     '2.25.5',
+164 silly addNameRange     '2.25.6',
+164 silly addNameRange     '2.25.7',
+164 silly addNameRange     '2.25.8',
+164 silly addNameRange     '2.25.9',
+164 silly addNameRange     '2.25.10',
+164 silly addNameRange     '2.26.0',
+164 silly addNameRange     '3.2.0',
+164 silly addNameRange     '2.26.1',
+164 silly addNameRange     '2.26.2',
+164 silly addNameRange     '2.26.3',
+164 silly addNameRange     '2.26.4',
+164 silly addNameRange     '2.26.5',
+164 silly addNameRange     '2.26.6',
+164 silly addNameRange     '2.27.0',
+164 silly addNameRange     '3.3.0',
+164 silly addNameRange     '2.27.1',
+164 silly addNameRange     '3.3.1',
+164 silly addNameRange     '2.27.2',
+164 silly addNameRange     '3.3.2',
+164 silly addNameRange     '2.27.3',
+164 silly addNameRange     '3.3.3',
+164 silly addNameRange     '2.27.4',
+164 silly addNameRange     '2.27.5',
+164 silly addNameRange     '2.27.6',
+164 silly addNameRange     '2.28.0',
+164 silly addNameRange     '3.3.4',
+164 silly addNameRange     '2.28.1',
+164 silly addNameRange     '2.28.2',
+164 silly addNameRange     '2.28.3',
+164 silly addNameRange     '2.29.0',
+164 silly addNameRange     '2.29.1',
+164 silly addNameRange     '3.3.5' ] ]
+165 verbose addNamed [ 'connect', '2.12.0' ]
+166 verbose addNamed [ '2.12.0', '2.12.0' ]
+167 silly lockFile a4bed1c7-connect-2-12-0 connect@2.12.0
+168 verbose lock connect@2.12.0 /Users/exile/.npm/a4bed1c7-connect-2-12-0.lock
+169 http 304 https://registry.npmjs.org/mime
+170 silly registry.get cb [ 304,
+170 silly registry.get   { date: 'Fri, 01 May 2015 15:26:16 GMT',
+170 silly registry.get     via: '1.1 varnish',
+170 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:16 GMT',
+170 silly registry.get     'cache-control': 'max-age=60',
+170 silly registry.get     etag: '"3ZRQIU5H2D52GRYT3000WPDFS"',
+170 silly registry.get     age: '16',
+170 silly registry.get     connection: 'keep-alive',
+170 silly registry.get     'x-served-by': 'cache-ams4120-AMS',
+170 silly registry.get     'x-cache': 'HIT',
+170 silly registry.get     'x-cache-hits': '1',
+170 silly registry.get     'x-timer': 'S1430493976.982674,VS0,VE0',
+170 silly registry.get     vary: 'Accept' } ]
+171 verbose etag https://registry.npmjs.org/mime from cache
+172 http 304 https://registry.npmjs.org/connect-flash
+173 silly registry.get cb [ 304,
+173 silly registry.get   { date: 'Fri, 01 May 2015 15:26:16 GMT',
+173 silly registry.get     via: '1.1 varnish',
+173 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:16 GMT',
+173 silly registry.get     'cache-control': 'max-age=60',
+173 silly registry.get     etag: '"D1OQ4SBP1PDJLNH67OWPJGSEB"',
+173 silly registry.get     age: '39',
+173 silly registry.get     connection: 'keep-alive',
+173 silly registry.get     'x-served-by': 'cache-ams4132-AMS',
+173 silly registry.get     'x-cache': 'HIT',
+173 silly registry.get     'x-cache-hits': '1',
+173 silly registry.get     'x-timer': 'S1430493976.989276,VS0,VE0',
+173 silly registry.get     vary: 'Accept' } ]
+174 verbose etag https://registry.npmjs.org/connect-flash from cache
+175 silly lockFile a4bed1c7-connect-2-12-0 connect@2.12.0
+176 silly lockFile a4bed1c7-connect-2-12-0 connect@2.12.0
+177 silly addNameRange number 2 { name: 'connect-flash',
+177 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+177 silly addNameRange   hasData: true }
+178 silly addNameRange versions [ 'connect-flash', [ '0.1.0', '0.1.1' ] ]
+179 verbose addNamed [ 'connect-flash', '0.1.1' ]
+180 verbose addNamed [ '0.1.1', '0.1.1' ]
+181 silly lockFile 0cdf4f98-connect-flash-0-1-1 connect-flash@0.1.1
+182 verbose lock connect-flash@0.1.1 /Users/exile/.npm/0cdf4f98-connect-flash-0-1-1.lock
+183 silly addNameRange number 2 { name: 'mime', range: '>=1.3.4-0 <1.4.0-0', hasData: true }
+184 silly addNameRange versions [ 'mime',
+184 silly addNameRange   [ '1.0.0',
+184 silly addNameRange     '1.1.0',
+184 silly addNameRange     '1.2.1',
+184 silly addNameRange     '1.2.2',
+184 silly addNameRange     '1.2.3',
+184 silly addNameRange     '1.2.4',
+184 silly addNameRange     '1.2.5',
+184 silly addNameRange     '1.2.6',
+184 silly addNameRange     '1.2.7',
+184 silly addNameRange     '1.2.8',
+184 silly addNameRange     '1.2.9',
+184 silly addNameRange     '1.2.10',
+184 silly addNameRange     '1.2.11',
+184 silly addNameRange     '1.3.0',
+184 silly addNameRange     '1.3.2',
+184 silly addNameRange     '1.3.3',
+184 silly addNameRange     '1.3.4' ] ]
+185 verbose addNamed [ 'mime', '1.3.4' ]
+186 verbose addNamed [ '1.3.4', '1.3.4' ]
+187 silly lockFile 7e818080-mime-1-3-4 mime@1.3.4
+188 verbose lock mime@1.3.4 /Users/exile/.npm/7e818080-mime-1-3-4.lock
+189 silly lockFile f7cd602c-connect-2-12-0 connect@~2.12.0
+190 silly lockFile f7cd602c-connect-2-12-0 connect@~2.12.0
+191 silly lockFile 0cdf4f98-connect-flash-0-1-1 connect-flash@0.1.1
+192 silly lockFile 0cdf4f98-connect-flash-0-1-1 connect-flash@0.1.1
+193 silly lockFile 7e818080-mime-1-3-4 mime@1.3.4
+194 silly lockFile 7e818080-mime-1-3-4 mime@1.3.4
+195 silly lockFile be0530b2-connect-flash-0-1-1 connect-flash@~0.1.1
+196 silly lockFile be0530b2-connect-flash-0-1-1 connect-flash@~0.1.1
+197 silly lockFile 8e5a3b74-mime-1-3-4 mime@~1.3.4
+198 silly lockFile 8e5a3b74-mime-1-3-4 mime@~1.3.4
+199 http 304 https://registry.npmjs.org/ejs
+200 silly registry.get cb [ 304,
+200 silly registry.get   { date: 'Fri, 01 May 2015 15:26:17 GMT',
+200 silly registry.get     via: '1.1 varnish',
+200 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:17 GMT',
+200 silly registry.get     'cache-control': 'max-age=60',
+200 silly registry.get     etag: '"3V6RAL95CA3D1ZLWSX5FMHCOR"',
+200 silly registry.get     age: '30',
+200 silly registry.get     connection: 'keep-alive',
+200 silly registry.get     'x-served-by': 'cache-ams4120-AMS',
+200 silly registry.get     'x-cache': 'HIT',
+200 silly registry.get     'x-cache-hits': '1',
+200 silly registry.get     'x-timer': 'S1430493977.029665,VS0,VE0',
+200 silly registry.get     vary: 'Accept' } ]
+201 verbose etag https://registry.npmjs.org/ejs from cache
+202 silly addNameRange number 2 { name: 'ejs', range: '>=2.3.1-0 <2.4.0-0', hasData: true }
+203 silly addNameRange versions [ 'ejs',
+203 silly addNameRange   [ '0.0.1',
+203 silly addNameRange     '0.0.2',
+203 silly addNameRange     '0.0.3',
+203 silly addNameRange     '0.0.4',
+203 silly addNameRange     '0.1.0',
+203 silly addNameRange     '0.2.0',
+203 silly addNameRange     '0.2.1',
+203 silly addNameRange     '0.3.0',
+203 silly addNameRange     '0.3.1',
+203 silly addNameRange     '0.4.0',
+203 silly addNameRange     '0.4.1',
+203 silly addNameRange     '0.4.2',
+203 silly addNameRange     '0.4.3',
+203 silly addNameRange     '0.5.0',
+203 silly addNameRange     '0.6.0',
+203 silly addNameRange     '0.6.1',
+203 silly addNameRange     '0.7.0',
+203 silly addNameRange     '0.7.1',
+203 silly addNameRange     '0.7.2',
+203 silly addNameRange     '0.8.0',
+203 silly addNameRange     '0.8.1',
+203 silly addNameRange     '0.8.2',
+203 silly addNameRange     '0.8.3',
+203 silly addNameRange     '0.8.4',
+203 silly addNameRange     '0.8.5',
+203 silly addNameRange     '0.8.6',
+203 silly addNameRange     '0.8.8',
+203 silly addNameRange     '1.0.0',
+203 silly addNameRange     '2.0.2',
+203 silly addNameRange     '2.0.3',
+203 silly addNameRange     '2.0.4',
+203 silly addNameRange     '2.0.5',
+203 silly addNameRange     '2.0.6',
+203 silly addNameRange     '2.0.7',
+203 silly addNameRange     '2.0.8',
+203 silly addNameRange     '2.1.1',
+203 silly addNameRange     '2.1.2',
+203 silly addNameRange     '2.1.3',
+203 silly addNameRange     '2.1.4',
+203 silly addNameRange     '2.2.1',
+203 silly addNameRange     '2.2.2',
+203 silly addNameRange     '2.2.3',
+203 silly addNameRange     '2.2.4',
+203 silly addNameRange     '2.3.1' ] ]
+204 verbose addNamed [ 'ejs', '2.3.1' ]
+205 verbose addNamed [ '2.3.1', '2.3.1' ]
+206 silly lockFile 823d5f08-ejs-2-3-1 ejs@2.3.1
+207 verbose lock ejs@2.3.1 /Users/exile/.npm/823d5f08-ejs-2-3-1.lock
+208 http 304 https://registry.npmjs.org/request
+209 silly registry.get cb [ 304,
+209 silly registry.get   { date: 'Fri, 01 May 2015 15:26:17 GMT',
+209 silly registry.get     via: '1.1 varnish',
+209 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:03 GMT',
+209 silly registry.get     'cache-control': 'max-age=60',
+209 silly registry.get     etag: '"22SLBL467UG47XQ849ZEDLUBB"',
+209 silly registry.get     age: '14',
+209 silly registry.get     connection: 'keep-alive',
+209 silly registry.get     'x-served-by': 'cache-ams4132-AMS',
+209 silly registry.get     'x-cache': 'HIT',
+209 silly registry.get     'x-cache-hits': '2',
+209 silly registry.get     'x-timer': 'S1430493977.033289,VS0,VE0',
+209 silly registry.get     vary: 'Accept' } ]
+210 verbose etag https://registry.npmjs.org/request from cache
+211 silly lockFile 823d5f08-ejs-2-3-1 ejs@2.3.1
+212 silly lockFile 823d5f08-ejs-2-3-1 ejs@2.3.1
+213 silly lockFile 35acc1b3-ejs-2-3-1 ejs@~2.3.1
+214 silly lockFile 35acc1b3-ejs-2-3-1 ejs@~2.3.1
+215 silly lockFile d17afc53-request-2-55-0 request@2.55.0
+216 silly lockFile d17afc53-request-2-55-0 request@2.55.0
+217 http 304 https://registry.npmjs.org/email-validator
+218 silly registry.get cb [ 304,
+218 silly registry.get   { date: 'Fri, 01 May 2015 15:26:17 GMT',
+218 silly registry.get     via: '1.1 varnish',
+218 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:17 GMT',
+218 silly registry.get     'cache-control': 'max-age=60',
+218 silly registry.get     etag: '"7D4FYZYNZH0E0KUEODDZ6I52U"',
+218 silly registry.get     age: '0',
+218 silly registry.get     connection: 'keep-alive',
+218 silly registry.get     'x-served-by': 'cache-ams4146-AMS',
+218 silly registry.get     'x-cache': 'MISS',
+218 silly registry.get     'x-cache-hits': '0',
+218 silly registry.get     'x-timer': 'S1430493977.001595,VS0,VE101',
+218 silly registry.get     vary: 'Accept' } ]
+219 verbose etag https://registry.npmjs.org/email-validator from cache
+220 silly addNameRange number 2 { name: 'email-validator',
+220 silly addNameRange   range: '>=1.0.1-0 <1.1.0-0',
+220 silly addNameRange   hasData: true }
+221 silly addNameRange versions [ 'email-validator',
+221 silly addNameRange   [ '0.1.0', '0.1.1', '0.1.2', '1.0.0', '1.0.1' ] ]
+222 verbose addNamed [ 'email-validator', '1.0.1' ]
+223 verbose addNamed [ '1.0.1', '1.0.1' ]
+224 silly lockFile 3e9e5194-email-validator-1-0-1 email-validator@1.0.1
+225 verbose lock email-validator@1.0.1 /Users/exile/.npm/3e9e5194-email-validator-1-0-1.lock
+226 silly lockFile 3e9e5194-email-validator-1-0-1 email-validator@1.0.1
+227 silly lockFile 3e9e5194-email-validator-1-0-1 email-validator@1.0.1
+228 silly lockFile c866d7c7-email-validator-1-0-1 email-validator@~1.0.1
+229 silly lockFile c866d7c7-email-validator-1-0-1 email-validator@~1.0.1
+230 http 304 https://registry.npmjs.org/netutil
+231 silly registry.get cb [ 304,
+231 silly registry.get   { date: 'Fri, 01 May 2015 15:26:16 GMT',
+231 silly registry.get     via: '1.1 varnish',
+231 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:17 GMT',
+231 silly registry.get     'cache-control': 'max-age=60',
+231 silly registry.get     etag: '"2YBC8F4D173HDAH8MBJ2VZQ7F"',
+231 silly registry.get     age: '0',
+231 silly registry.get     connection: 'keep-alive',
+231 silly registry.get     'x-served-by': 'cache-ams4128-AMS',
+231 silly registry.get     'x-cache': 'MISS',
+231 silly registry.get     'x-cache-hits': '0',
+231 silly registry.get     'x-timer': 'S1430493976.978609,VS0,VE388',
+231 silly registry.get     vary: 'Accept' } ]
+232 verbose etag https://registry.npmjs.org/netutil from cache
+233 silly addNameRange number 2 { name: 'netutil', range: '>=0.0.2-0 <0.1.0-0', hasData: true }
+234 silly addNameRange versions [ 'netutil', [ '0.0.1', '0.0.2' ] ]
+235 verbose addNamed [ 'netutil', '0.0.2' ]
+236 verbose addNamed [ '0.0.2', '0.0.2' ]
+237 silly lockFile f9a4f2d3-netutil-0-0-2 netutil@0.0.2
+238 verbose lock netutil@0.0.2 /Users/exile/.npm/f9a4f2d3-netutil-0-0-2.lock
+239 silly lockFile f9a4f2d3-netutil-0-0-2 netutil@0.0.2
+240 silly lockFile f9a4f2d3-netutil-0-0-2 netutil@0.0.2
+241 silly lockFile 05769cc6-netutil-0-0-2 netutil@~0.0.2
+242 silly lockFile 05769cc6-netutil-0-0-2 netutil@~0.0.2
+243 http 304 https://registry.npmjs.org/architect
+244 silly registry.get cb [ 304,
+244 silly registry.get   { date: 'Fri, 01 May 2015 15:26:16 GMT',
+244 silly registry.get     via: '1.1 varnish',
+244 silly registry.get     'last-modified': 'Fri, 01 May 2015 15:26:17 GMT',
+244 silly registry.get     'cache-control': 'max-age=60',
+244 silly registry.get     etag: '"54O7WS7VVFMN1BY1TSMN5SM6W"',
+244 silly registry.get     age: '0',
+244 silly registry.get     connection: 'keep-alive',
+244 silly registry.get     'x-served-by': 'cache-ams4144-AMS',
+244 silly registry.get     'x-cache': 'MISS',
+244 silly registry.get     'x-cache-hits': '0',
+244 silly registry.get     'x-timer': 'S1430493976.957319,VS0,VE857',
+244 silly registry.get     vary: 'Accept' } ]
+245 verbose etag https://registry.npmjs.org/architect from cache
+246 info maybeGithub Attempting ../architect from git://github.com/../architect
+247 silly lockFile 63f187b6-git-github-com-architect git://github.com/../architect
+248 verbose lock git://github.com/../architect /Users/exile/.npm/63f187b6-git-github-com-architect.lock
+249 verbose addRemoteGit [ 'git://github.com/../architect', 'master' ]
+250 verbose git clone git://github.com/../architect Cloning into bare repository '/Users/exile/.npm/_git-remotes/git-github-com-architect-63f187b6'...
+250 verbose git clone git://github.com/../architect fatal: remote error:
+250 verbose git clone git://github.com/../architect   Repository not found.
+251 silly lockFile 63f187b6-git-github-com-architect git://github.com/../architect
+252 silly lockFile 63f187b6-git-github-com-architect git://github.com/../architect
+253 info maybeGithub Attempting ../architect from git+ssh://git@github.com:../architect
+254 silly lockFile 785a3738-git-github-com-architect git@github.com:../architect
+255 verbose lock git@github.com:../architect /Users/exile/.npm/785a3738-git-github-com-architect.lock
+256 verbose addRemoteGit [ 'git@github.com:../architect', 'master' ]
+257 error git clone git@github.com:../architect Cloning into bare repository '/Users/exile/.npm/_git-remotes/git-github-com-architect-785a3738'...
+257 error git clone git@github.com:../architect Saving password to keychain failed
+257 error git clone git@github.com:../architect Permission denied (publickey).
+257 error git clone git@github.com:../architect fatal: Could not read from remote repository.
+257 error git clone git@github.com:../architect
+257 error git clone git@github.com:../architect Please make sure you have the correct access rights
+257 error git clone git@github.com:../architect and the repository exists.
+258 silly lockFile 785a3738-git-github-com-architect git@github.com:../architect
+259 silly lockFile 785a3738-git-github-com-architect git@github.com:../architect
+260 silly lockFile 942ab160-architect-architect architect@../architect
+261 silly lockFile 942ab160-architect-architect architect@../architect
+262 error notarget No compatible version found: architect@'../architect'
+262 error notarget Valid install targets:
+262 error notarget ["0.0.1","0.0.3","0.1.1","0.1.2","0.1.3","0.1.4","0.1.5","0.1.6","0.1.7","0.1.8","0.1.9","0.1.10","0.1.11"]
+262 error notarget
+262 error notarget This is most likely not a problem with npm itself.
+262 error notarget In most cases you or one of your dependencies are requesting
+262 error notarget a package version that doesn't exist.
+263 error System Darwin 14.3.0
+264 error command "/Users/exile/.nvm/v0.10.38/bin/node" "/Users/exile/.nvm/v0.10.38/bin/npm" "install"
+265 error cwd /Users/exile/Projects/c9/connect-architect
+266 error node -v v0.10.38
+267 error npm -v 1.4.28
+268 error code ETARGET
+269 verbose exit [ 1, true ]

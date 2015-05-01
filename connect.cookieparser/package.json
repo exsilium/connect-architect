@@ -1,8 +1,8 @@
 {
-    "name": "connect.cors",
+    "name": "connect.cookieparser",
     "version": "0.0.1",
 
-    "main": "./cors.js",
+    "main": "./cookieparser.js",
     "private": true,
 
     "plugin": {
@@ -10,7 +10,7 @@
             "connect"
         ],
         "provides": [
-            "connect.cors"
+            "connect.cookieparser"
         ]
     }
 }

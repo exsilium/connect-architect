@@ -10,6 +10,7 @@ module.exports = function startup(options, imports, register) {
             get: sessionStore.get.bind(sessionStore),
             set: sessionStore.set.bind(sessionStore),
             destroy: sessionStore.destroy.bind(sessionStore),
+            regenerate: sessionStore.regenerate.bind(sessionStore),
             createSession: sessionStore.createSession.bind(sessionStore)
         }
     });

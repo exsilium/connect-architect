@@ -1,5 +1,5 @@
 {
-    "name": "c9.connect.ensure-login",
+    "name": "connect.ensure-login",
     "version": "0.0.1",
 
     "main": "./ensure-login.js",

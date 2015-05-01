@@ -4,11 +4,11 @@ var http = require("http");
 
 module.exports = function(options, imports, register) {
     
-    http.ServerResponse.prototype.redirect = function(location) {
+    imports.connect.addResponseMethod("redirect", function(location) {
         this.writeHead(302, {Location: location});
         this.end("");
-    };
-    http.ServerResponse.prototype.returnTo = function(req, defaultReturn) {
+    });
+    imports.connect.addResponseMethod("returnTo", function(req, defaultReturn) {
         var url = defaultReturn || "/";        
         if (req.session && req.session.returnTo) {
             url = req.session.returnTo;
@@ -16,11 +16,11 @@ module.exports = function(options, imports, register) {
         }
         
         this.redirect(url);
-    };
-    http.ServerResponse.prototype.moved = function(location) {
+    });
+    imports.connect.addResponseMethod("moved", function(location) {
         this.writeHead(301, {Location: location});
         this.end("");
-    };
+    });
     
     register(null, {
         "connect.redirect": {}

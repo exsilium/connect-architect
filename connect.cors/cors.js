@@ -14,7 +14,7 @@ function cors(origin, options) {
         var writeHead = res.writeHead;
 
         res.writeHead = function(status, headers) {
-            var headers = headers || {};
+            headers = headers || {};
     
             for (var key in headers)
                 if (key.toLowerCase().indexOf("access-control") === 0)
@@ -24,6 +24,8 @@ function cors(origin, options) {
             headers["Access-Control-Allow-Methods"] = options.methods || "GET, OPTIONS";
             if (options.headers)
                 headers["Access-Control-Allow-Headers"] = options.headers.join(", ");
+            if (options.exposeHeaders)
+                headers["Access-Control-Expose-Headers"] = options.exposeHeaders.join(", ");
             headers["Access-Control-Max-Age"] = options.maxAge || 100 * 24 * 60 * 60;
             if (origin !== "*")
                 headers["Access-Control-Allow-Credentials"] = "true";

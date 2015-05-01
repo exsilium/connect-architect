@@ -1,5 +1,7 @@
 "use strict";
 
+var UAParser = require("ua-parser-js");
+
 module.exports = function(options, imports, register) {
     imports.connect.useSetup(csp());
     register(null, {
@@ -16,8 +18,8 @@ module.exports = function(options, imports, register) {
 };
 
 function csp() {
+    
     return function(req, res, next) {
-
         res._csp_policy = {
             "default-src": "'self'",
             "script-src": {},
@@ -31,7 +33,7 @@ function csp() {
             "report-uri": ""
         };
         res._csp_has_policy = false;
-        
+
         var keywords = {
             "none": 1,
             "self": 1,
@@ -93,6 +95,21 @@ function csp() {
             if (!res._csp_has_policy)
                 return;
                 
+            var parser = new UAParser();
+            var uaHeader = req.headers['user-agent'];
+            parser.setUA(uaHeader);
+            var ua = parser.getBrowser();
+            var browser = ua.browser || {};
+            var engine = ua.engine || {};
+
+            if (
+                // old firefox doesn't support CSP properly
+                engine.name == "Gecko" && parseInt(engine.version, 10) <= 23 ||
+                (uaHeader || "").indexOf("Googlebot") >= 0
+            ) {
+                return;
+            }
+    
             var policyValue = Object.keys(res._csp_policy)
                 .map(function(key) {
                     var value = res._csp_policy[key];
@@ -117,6 +134,14 @@ function csp() {
                 .join("; ");
                 
             res.setHeader("Content-Security-Policy", policyValue);
+            if (
+                ua.engine == "Gecko" && parseInt(ua.engine.version, 10) <= 23 ||
+                browser.name == "Chrome" && parseInt(browser.major, 10) >= 25 ||
+                browser.name == "Safari" && parseInt(browser.major, 10) >= 7
+            ) {
+                return;
+            }
+            
             res.setHeader("X-Content-Security-Policy", policyValue);
             res.setHeader("X-WebKit-CSP", policyValue);
         });

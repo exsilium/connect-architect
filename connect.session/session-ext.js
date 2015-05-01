@@ -17,16 +17,17 @@ module.exports = function startup(options, imports, register) {
     };
     if ("proxy" in options)
         sessionOptions.proxy = options.proxy;
-        
+
     var cookie = sessionOptions.cookie;
     if ("secure" in options)
         cookie.secure = options.secure;
-        
+
     if ("maxAge" in options)
         cookie.maxAge = options.maxAge;
 
-    var sessionRoutes = imports.connect.getModule()();
-    connect.useMain(sessionRoutes);
+    var connectModule = imports.connect.getModule();
+    var sessionRoutes = connectModule();
+    connect.useSession(sessionRoutes);
 
     sessionRoutes.use(Session(sessionOptions, cookie));
 

@@ -11,9 +11,9 @@
   ],
   "pm": "npm",
   "dependencies": {
-    "connect": "~2.7.6",
+    "connect": "~2.12.0",
     "connect-flash": "~0.1.1",
-    "architect": "~0.1.11",
+    "architect": "http://github.com/exsilium/architect/tarball/770c97714a23103229947a0909d6bbe25e9e653f",
     "netutil": "~0.0.2",
     "mime": "~1.3.4",
     "email-validator": "~1.0.1",

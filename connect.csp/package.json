@@ -1,5 +1,5 @@
 {
-    "name": "c9.connect.csp",
+    "name": "connect.csp",
     "version": "0.0.1",
 
     "main": "./csp.js",

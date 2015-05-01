@@ -18,24 +18,26 @@ module.exports = function(options, imports, register) {
         engines[name] = handler;
     }
     
-    http.ServerResponse.prototype.setTemplatePath = function(path) {
+    imports.connect.addResponseMethod("setTemplatePath", function(path) {
         this._templatePaths = this._templatePaths || [];
         this._templatePaths.push(path);
-    };
+    });
     
-    http.ServerResponse.prototype.resetTemplatePath = function() {
+    imports.connect.addResponseMethod("resetTemplatePath", function() {
         if (this._templatePaths)
             this._templatePaths.pop();
-    };
+    });
         
-    http.ServerResponse.prototype.render = function(name, options, next) {
+    imports.connect.addResponseMethod("render", function(name, options, next) {
         var res = this;
         
         var paths = this._templatePaths || [];
         if (!paths.length && defaultTemplatePath)
             paths.push(defaultTemplatePath);
             
-        var isAbsolute = name[0] === "/";
+        var isAbsolute = path.sep === "/"
+            ? name[0] === "/"
+            : name[1] === ":";
         var key = isAbsolute 
             ? name
             : paths.join("&") + "&" + name;
@@ -46,7 +48,11 @@ module.exports = function(options, imports, register) {
             view(res, res.getOptions(options), function(err, rendered) {
                 if (err) return next(err);
                 
-                res.writeHead(200, rendered.headers || {});
+                if (next && next.length == 2)
+                    return next(null, rendered.body);
+                
+                var statusCode = options.statusCode || 200;
+                res.writeHead(statusCode, rendered.headers || {});
                 res.end(rendered.body);
             });
         });
@@ -96,7 +102,7 @@ module.exports = function(options, imports, register) {
                 });
             }
         }
-    };
+    });
 
     register(null, {
         "connect.render": {
